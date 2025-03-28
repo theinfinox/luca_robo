@@ -1,5 +1,5 @@
 # luca_robo
- The desktop pet project
+ The desktop pet project using NodeMCU ( esp8266 )
 ---
 
 # 🤖✨ RoboEyes with Moods & Weather Effects
