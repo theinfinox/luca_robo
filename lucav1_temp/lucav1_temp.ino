@@ -83,14 +83,16 @@ void updateEyesForTemperature(float temp) {
     
     showSnow = true;
     showSweat = false;
-    eyes.setHFlicker(flicker ? ON : OFF, 1);
+    eyes.setHFlicker(ON, 2);
   }
   else if(temp > HOT_THRESHOLD) {
+    eyes.setHFlicker(OFF, 0);
     eyes.setMood(TIRED);
     showSnow = false;
     showSweat = true;
   }
   else {
+    eyes.setHFlicker(OFF, 0);
     eyes.setMood(DEFAULT);
     showSnow = showSweat = false;
   }
@@ -136,6 +138,7 @@ void loop() {
     tempEffects = !tempEffects;
     digitalWrite(LED_BUILTIN, tempEffects ? LOW : HIGH); // LED ON when effect active
     if(!tempEffects) {
+      eyes.setHFlicker(OFF, 0);
       eyes.setMood(DEFAULT);
       updateEyesForTemperature(28.0); // Reset to neutral state
     }
