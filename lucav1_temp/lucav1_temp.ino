@@ -91,11 +91,7 @@ void updateEyesForTemperature(float temp) {
     showSweat = true;
   }
   else {
-    // Reset to default dimensions
-    eyes.eyeLwidthNext = eyes.eyeLwidthDefault;
-    eyes.eyeRwidthNext = eyes.eyeRwidthDefault;
-    eyes.eyeLheightNext = eyes.eyeLheightDefault;
-    eyes.eyeRheightNext = eyes.eyeRheightDefault;
+    eyes.setMood(DEFAULT);
     showSnow = showSweat = false;
   }
 }
